@@ -51,22 +51,13 @@ get_header(); // The header is in header.php. I haven't included it in this chil
 						?>
 					</header><!-- .entry-header -->
 				
-					<?php if ( '' !== get_the_post_thumbnail() ) : // if the post has a thumbnail, ie a "feautured image" then display it
-						// In general get_the_... functions don't echo the item and the_... functions do. So here we're just checking to see that it exists. ?>
-						<div class="post-thumbnail">
-							<a href="<?php the_permalink(); // the post permalink ?>">
-								<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); // this is simply `echo get_the_post_thumbnail();` ?>
-							</a>
-						</div><!-- .post-thumbnail -->
-					<?php endif; ?>
-				
 					<div class="entry-content">
 						<?php
 						// https://developer.wordpress.org/reference/functions/the_content/
 						the_content(); // This is the post content itself! If there is a "more" link, it will only show the part of the content above the more link.
 						?>
 					</div><!-- .entry-content -->
-					
+
 					<!-- <img src="/wp-content/themes/twentyseventeen/assets/images/sandwich.jpg" alt="decorative image added to the loop" /> -->
 				
 				</article><!-- #post-## -->
