@@ -12,7 +12,24 @@ License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 // This one is for use in a workshop and was written to illustrate some basic concepts in WordPress.
 // So please don't ever use it as a guide to writing a plugin.
 
-add_action( 'wp_enqueue_scripts', 'dysfunctional_enqueuing' ); // this adds the dysfunctional_enqueuing function to 'wp_enqueue_scripts'
+/*
+ * Add the Hooks:Filters and Hooks:Actions exercises below this.
+ */
+
+
+
+
+
+
+
+
+
+/*
+ * These functions are for the "Adding JS and CSS files" exercises.
+ * Uncomment (ie delete the // bit at the beginning of the line) add_action(...) to add the 'wp_enqueue_scripts' action
+ */
+
+// add_action( 'wp_enqueue_scripts', 'dysfunctional_enqueuing' ); // this adds the dysfunctional_enqueuing function to 'wp_enqueue_scripts'
 function dysfunctional_enqueuing() {
 
 	// register and enqueue the dysfunctional-1.css file with the handle 'dys-1', a dependency on the file with the handle 'dys-2' and a version of 1.0.0
