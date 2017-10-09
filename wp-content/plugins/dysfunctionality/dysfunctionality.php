@@ -32,15 +32,17 @@ License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 // add_action( 'wp_enqueue_scripts', 'dysfunctional_enqueuing' ); // this adds the dysfunctional_enqueuing function to 'wp_enqueue_scripts'
 function dysfunctional_enqueuing() {
 
+	$plugin_path = plugin_dir_path( __FILE__ ); // this gives us the filepath to this file. We're going to use it to cache bust the js and css files.
+
 	// register and enqueue the dysfunctional-1.css file with the handle 'dys-1', a dependency on the file with the handle 'dys-2' and a version of 1.0.0
 	// what happens if you remove the dependency on dys-2? (change the version number to make sure you pick up the fresh version of the css file)
-	wp_enqueue_style( 'dys-1', plugins_url( 'dysfunctional-1.css', __FILE__ ), array( 'dys-2' ), '1.0.0' );
+	wp_enqueue_style( 'dys-1', plugins_url( 'dysfunctional-1.css', __FILE__ ), array( 'dys-2' ), filemtime( $plugin_path . 'dysfunctional-1.css' ) );
 
 	// register and enqueue the dysfunctional-2.css file with the handle 'dys-2', no dependencies and a version of 1.0.0
-	wp_enqueue_style( 'dys-2', plugins_url( 'dysfunctional-2.css', __FILE__ ), array(), '1.0.0' );
+	wp_enqueue_style( 'dys-2', plugins_url( 'dysfunctional-2.css', __FILE__ ), array(), filemtime( $plugin_path . 'dysfunctional-2.css' ) );
 
 	// register and enqueue the dysfunctional.js file with the handle 'dys-js', a dependency on jQuery and a version of 1.0.0
 	// what happens if you remove the dependency to jquery? (change the version number to make sure you pick up the fresh version of the js file)
-	wp_enqueue_script( 'dys-js', plugins_url( 'dysfunctional.js', __FILE__ ), array( 'jquery' ), '1.0.0' );
+	wp_enqueue_script( 'dys-js', plugins_url( 'dysfunctional.js', __FILE__ ), array( 'jquery' ),  filemtime( $plugin_path . 'dysfunctional.js' ) );
 }
 
