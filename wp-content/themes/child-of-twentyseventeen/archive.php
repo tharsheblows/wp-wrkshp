@@ -22,10 +22,10 @@ get_header(); // The header is in header.php. I haven't included it in this chil
 	</header><!-- .page-header -->
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
 		<?php
-		// We're getting ready to start the Loop! Here's a good explanation of it: https://codex.wordpress.org/The_Loop_in_Action
+		// We're getting ready to start the Loop! Here's a good explanation of it:
+		// https://codex.wordpress.org/The_Loop_in_Action
 		// Let's only loop through the posts if there are any. :)
 		if ( have_posts() ) : ?>
 			<?php
@@ -66,7 +66,8 @@ get_header(); // The header is in header.php. I haven't included it in this chil
 
 			endwhile; // Are there more posts to loop through? If so, keep looping. If not, we're done.
 
-			the_posts_pagination(); // We're not in the loop anymore, but we still know what query we did. Are there more posts to show? This is the pagination.
+			the_posts_pagination(); // We're not in the loop anymore, but we still know what query we did.
+									// Are there more posts to show? This is the pagination.
 
 		else : // If there are no posts from the query, let people know.
 			// This template basically just says "No posts, sorry!"

@@ -19,17 +19,12 @@ License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 
 
 
-
-
-
-
-
 /*
  * These functions are for the "Adding JS and CSS files" exercises.
  * Uncomment (ie delete the // bit at the beginning of the line) add_action(...) to add the 'wp_enqueue_scripts' action
  */
 
-// add_action( 'wp_enqueue_scripts', 'dysfunctional_enqueuing' ); // this adds the dysfunctional_enqueuing function to 'wp_enqueue_scripts'
+//add_action( 'wp_enqueue_scripts', 'dysfunctional_enqueuing' ); // this adds the dysfunctional_enqueuing function to 'wp_enqueue_scripts'
 function dysfunctional_enqueuing() {
 
 	$plugin_path = plugin_dir_path( __FILE__ ); // this gives us the filepath to this file. We're going to use it to cache bust the js and css files.
